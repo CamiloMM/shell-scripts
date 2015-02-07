@@ -22,7 +22,9 @@ Google translate from your shell. Since I've reverse-engineered the [web app][1]
 
 This is pretty similar but uses Microsoft Translate (or [Bing Translate][2], whatever). I've coded it after snorting http packets from a Notepad++ plugin. Same thing: if this breaks file me an issue, and I'll look into it. Note how this one specifies automatic language detection by an empty argument instead of `auto`.
 
-> :memo: I've considered adding a [BabelFish][3] script, but it has less languages, no auto-detect and the results seem to be coming from MS translate!
+| Note |
+|------|
+| I've considered adding a [BabelFish][3] script, but it has just a few languages, no automatic detection and the results seem to be coming all from MS translate! It would be MS translate with less features.
 
 ### Syntax:
 
