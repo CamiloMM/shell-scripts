@@ -16,4 +16,21 @@ Google translate from your shell. Since I've reverse-engineered the [web app][1]
     google-translate.sh auto en "馬鹿は死ななきゃ治らない。"
     google-translate.sh auto en "彼女の顔は精液に包まれました"
 
+# `microsoft-translate.sh`
+
+This is pretty similar but uses Microsoft Translate (or [Bing Translate][2], whatever). I've coded it after snorting http packets from a Notepad++ plugin. Same thing: if this breaks file me an issue, and I'll look into it. Note how this one specifies automatic language detection by an empty argument instead of `auto`.
+
+### Syntax:
+
+    microsoft-translate.sh SOURCE TARGET PHRASE
+
+### Examples:
+
+    microsoft-translate.sh '' en "Бережливость хороша, да скупость страшна"
+    microsoft-translate.sh '' en "猿も木から落ちる。"
+    microsoft-translate.sh '' pt-BR "Spaghetti alla puttanesca means spaghetti of the whore"
+    microsoft-translate.sh '' en "Setze jutges d'un jutjat mengen fetge d'un penjat"
+    microsoft-translate.sh '' en "그녀는 공포에 봤다, 정액 사방에 비행 했다."
+
 [1]: https://translate.google.com/
+[2]: http://www.bing.com/translator/
