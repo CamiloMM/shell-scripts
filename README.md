@@ -2,6 +2,11 @@
 
 ---
 
+* [`google-translate.sh`](#google-translatesh)
+* [`microsoft-translate.sh`](#microsoft-translatesh)
+
+---
+
 # `google-translate.sh`
 
 Google translate from your shell. Since I've reverse-engineered the [web app][1], this might break at any moment and require fixes. Just file an issue and I'll take a look, but really, I don't even have to tell you not to use shit like this on anything resembling "production environment".
