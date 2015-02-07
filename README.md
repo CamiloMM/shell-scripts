@@ -1,5 +1,7 @@
 <p align=center><img src=logo.png /></p>
 
+---
+
 # `google-translate.sh`
 
 Google translate from your shell. Since I've reverse-engineered the [web app][1], this might break at any moment and require fixes. Just file an issue and I'll take a look, but really, I don't even have to tell you not to use shit like this on anything resembling "production environment".
@@ -20,6 +22,8 @@ Google translate from your shell. Since I've reverse-engineered the [web app][1]
 
 This is pretty similar but uses Microsoft Translate (or [Bing Translate][2], whatever). I've coded it after snorting http packets from a Notepad++ plugin. Same thing: if this breaks file me an issue, and I'll look into it. Note how this one specifies automatic language detection by an empty argument instead of `auto`.
 
+> :memo: I've considered adding a [BabelFish][3] script, but it has less languages, no auto-detect and the results seem to be coming from MS translate!
+
 ### Syntax:
 
     microsoft-translate.sh SOURCE TARGET PHRASE
@@ -34,3 +38,4 @@ This is pretty similar but uses Microsoft Translate (or [Bing Translate][2], wha
 
 [1]: https://translate.google.com/
 [2]: http://www.bing.com/translator/
+[3]: http://www.babelfish.com/
