@@ -6,6 +6,7 @@
 * [`microsoft-translate.sh`](#microsoft-translatesh)
 * [`yandex-translate.sh`](#yandex-translatesh)
 * [`mymemory-translate.sh`](#mymemory-translatesh)
+* [`compare-translations.sh`](#compare-translationssh)
 
 ---
 
@@ -68,6 +69,18 @@ This is an [automatic-translation-aggregator type of thing][5], which also seems
 ### Example:
 
     mymemory-translate.sh '' en "A detecção automática de idiomas desse bagulho é bem ruinzinha."
+
+# `compare-translations.sh`
+
+This script compares the different translation engines using their respective scripts.
+
+### Syntax:
+
+    compare-translations.sh PHRASE
+
+### Example:
+
+	compare-translations.sh "Niemand ist mehr Sklave, als der sich für frei hält, ohne es zu sein."
 
 [1]: https://translate.google.com/
 [2]: http://www.bing.com/translator/
