@@ -5,6 +5,7 @@
 * [`google-translate.sh`](#google-translatesh)
 * [`microsoft-translate.sh`](#microsoft-translatesh)
 * [`yandex-translate.sh`](#yandex-translatesh)
+* [`mymemory-translate.sh`](#mymemory-translatesh)
 
 ---
 
@@ -26,7 +27,7 @@ Google translate from your shell. Since I've reverse-engineered the [web app][1]
 
 # `microsoft-translate.sh`
 
-This is pretty similar but uses Microsoft Translate (or [Bing Translate][2], whatever). I've coded it after snorting http packets from a Notepad++ plugin. Same thing: if this breaks file me an issue, and I'll look into it. Note how this one specifies automatic language detection by an empty argument instead of `auto`. Note that it seems to have the best automatic language detection around.
+This is pretty similar but uses Microsoft Translate (or [Bing Translate][2], whatever). I've coded it after snorting http packets from a Notepad++ plugin. Same thing: if this breaks file me an issue, and I'll look into it. Note how this one specifies automatic language detection by an empty argument instead of `auto`. Note that it seems to have the best automatic language detection around, and honestly for some languages the translation seems better than Google Translate, which came as a surprise to me.
 
 | Note |
 |------|
@@ -56,7 +57,20 @@ Another alternative translation service, probably especially good with Russian b
 
     yandex-translate.sh '' en "Когда я говорил, что хочу всё и сразу, то не имел в виду проблемы и неприятности."
 
+# `mymemory-translate.sh`
+
+This is an [automatic-translation-aggregator type of thing][5], which also seems to feature human contributions. The most surprising aspect is that the API seems to be intentionally out in the clear so it was pretty easy to add it. Automatic language detection is laughable and it may give you weird results for too-short content, so give it a spin but YMMV.
+
+### Syntax:
+
+    mymemory-translate.sh SOURCE TARGET PHRASE
+
+### Example:
+
+    mymemory-translate.sh '' en "A detecção automática de idiomas desse bagulho é bem ruinzinha."
+
 [1]: https://translate.google.com/
 [2]: http://www.bing.com/translator/
 [3]: http://www.babelfish.com/
 [4]: https://translate.yandex.com/
+[5]: http://mymemory.translated.net/
