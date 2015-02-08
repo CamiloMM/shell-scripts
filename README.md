@@ -4,6 +4,7 @@
 
 * [`google-translate.sh`](#google-translatesh)
 * [`microsoft-translate.sh`](#microsoft-translatesh)
+* [`yandex-translate.sh`](#yandex-translatesh)
 
 ---
 
@@ -25,7 +26,7 @@ Google translate from your shell. Since I've reverse-engineered the [web app][1]
 
 # `microsoft-translate.sh`
 
-This is pretty similar but uses Microsoft Translate (or [Bing Translate][2], whatever). I've coded it after snorting http packets from a Notepad++ plugin. Same thing: if this breaks file me an issue, and I'll look into it. Note how this one specifies automatic language detection by an empty argument instead of `auto`.
+This is pretty similar but uses Microsoft Translate (or [Bing Translate][2], whatever). I've coded it after snorting http packets from a Notepad++ plugin. Same thing: if this breaks file me an issue, and I'll look into it. Note how this one specifies automatic language detection by an empty argument instead of `auto`. Note that it seems to have the best automatic language detection around.
 
 | Note |
 |------|
@@ -43,6 +44,19 @@ This is pretty similar but uses Microsoft Translate (or [Bing Translate][2], wha
     microsoft-translate.sh '' en "Setze jutges d'un jutjat mengen fetge d'un penjat"
     microsoft-translate.sh '' en "그녀는 공포에 봤다, 정액 사방에 비행 했다."
 
+# `yandex-translate.sh`
+
+Another alternative translation service, probably especially good with Russian but at the same time carrying a comparable set of features to the other ones. Note the script has to query their service twice if you don't specify the language (their [web app][4] also does this). Automatic language detection is also somewhat poor for short phrases.
+
+### Syntax:
+
+    yandex-translate.sh SOURCE TARGET PHRASE
+
+### Example:
+
+    yandex-translate.sh '' en "Когда я говорил, что хочу всё и сразу, то не имел в виду проблемы и неприятности."
+
 [1]: https://translate.google.com/
 [2]: http://www.bing.com/translator/
 [3]: http://www.babelfish.com/
+[4]: https://translate.yandex.com/
