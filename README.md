@@ -29,6 +29,10 @@ Google translate from your shell. Since I've reverse-engineered the [web app][1]
     google-translate.sh auto en "馬鹿は死ななきゃ治らない。"
     google-translate.sh auto en "彼女の顔は精液に包まれました"
 
+### Dependencies:
+
+`perl`, `curl`, `tr`, `node`
+
 # `microsoft-translate.sh`
 
 This is pretty similar but uses Microsoft Translate (or [Bing Translate][2], whatever). I've coded it after snorting http packets from a Notepad++ plugin. Same thing: if this breaks file me an issue, and I'll look into it. Note how this one specifies automatic language detection by an empty argument instead of `auto`. Note that it seems to have the best automatic language detection around, and honestly for some languages the translation seems better than Google Translate, which came as a surprise to me.
@@ -49,6 +53,10 @@ This is pretty similar but uses Microsoft Translate (or [Bing Translate][2], wha
     microsoft-translate.sh '' en "Setze jutges d'un jutjat mengen fetge d'un penjat"
     microsoft-translate.sh '' en "그녀는 공포에 봤다, 정액 사방에 비행 했다."
 
+### Dependencies:
+
+`sed`, `iconv`, `wget`
+
 # `yandex-translate.sh`
 
 Another alternative translation service, probably especially good with Russian but at the same time carrying a comparable set of features to the other ones. Note the script has to query their service twice if you don't specify the language (their [web app][4] also does this). Automatic language detection is also somewhat poor for short phrases.
@@ -61,6 +69,10 @@ Another alternative translation service, probably especially good with Russian b
 
     yandex-translate.sh '' en "Когда я говорил, что хочу всё и сразу, то не имел в виду проблемы и неприятности."
 
+### Dependencies:
+
+`perl`, `curl`, `sed`
+
 # `mymemory-translate.sh`
 
 This is an [automatic-translation-aggregator type of thing][5], which also seems to feature human contributions. The most surprising aspect is that the API seems to be intentionally out in the clear so it was pretty easy to add it. Automatic language detection is laughable and it may give you weird results for too-short content, so give it a spin but YMMV.
@@ -72,6 +84,10 @@ This is an [automatic-translation-aggregator type of thing][5], which also seems
 ### Example:
 
     mymemory-translate.sh '' en "A detecção automática de idiomas desse bagulho é bem ruinzinha."
+
+### Dependencies:
+
+`perl`, `wget`, `grep`, `sed`, `curl`, `node`
 
 # `compare-translations.sh`
 
@@ -86,6 +102,10 @@ This script compares the different translation engines using their respective sc
 	compare-translations.sh "Niemand ist mehr Sklave, als der sich für frei hält, ohne es zu sein."
 	compare-translations.sh "Les opinions ont plus causé de maux sur ce petit globe que la peste et les tremblements de terre."
 
+### Dependencies:
+
+`microsoft-translate.sh`, `google-translate.sh`, `yandex-translate.sh`, `mymemory-translate.sh`
+
 # `fpl2html.sh`
 
 This script converts a Foobar2000 playlist into an HTML list, that can be easily copy-pasted into places that accept HTML. I made it for my girlfriend to upload her playlist as a tumblr page ([see it as an example][6]). With slight editing you can do other things with playlists; there are many fields which were parsed in the script but not used.
@@ -95,6 +115,10 @@ It uses [an utility called `fplreader` by Jacob Hipps][7], there's a download li
 ### Usage:
 
 	fpl2html.sh path/to/playlist.fpl > path/to/playlist.html # Will take a while
+
+### Dependencies:
+
+`sed`, `iconv`, `perl`, [`fplreader`][7]
 
 [1]: https://translate.google.com/
 [2]: http://www.bing.com/translator/
