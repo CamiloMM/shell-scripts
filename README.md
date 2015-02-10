@@ -31,7 +31,7 @@ Google translate from your shell. Since I've reverse-engineered the [web app][1]
 
 ### Dependencies:
 
-`perl`, `curl`, `tr`, `node`
+`perl` `curl` `tr` `node`
 
 # `microsoft-translate.sh`
 
@@ -55,7 +55,7 @@ This is pretty similar but uses Microsoft Translate (or [Bing Translate][2], wha
 
 ### Dependencies:
 
-`sed`, `iconv`, `wget`
+`sed` `iconv` `wget`
 
 # `yandex-translate.sh`
 
@@ -71,7 +71,7 @@ Another alternative translation service, probably especially good with Russian b
 
 ### Dependencies:
 
-`perl`, `curl`, `sed`
+`perl` `curl` `sed`
 
 # `mymemory-translate.sh`
 
@@ -87,7 +87,7 @@ This is an [automatic-translation-aggregator type of thing][5], which also seems
 
 ### Dependencies:
 
-`perl`, `wget`, `grep`, `sed`, `curl`, `node`
+`perl` `wget` `grep` `sed` `curl` `node`
 
 # `compare-translations.sh`
 
@@ -104,7 +104,7 @@ This script compares the different translation engines using their respective sc
 
 ### Dependencies:
 
-`microsoft-translate.sh`, `google-translate.sh`, `yandex-translate.sh`, `mymemory-translate.sh`
+`microsoft-translate.sh` `google-translate.sh` `yandex-translate.sh` `mymemory-translate.sh`
 
 # `fpl2html.sh`
 
@@ -118,7 +118,7 @@ It uses [an utility called `fplreader` by Jacob Hipps][7], there's a download li
 
 ### Dependencies:
 
-`sed`, `iconv`, `perl`, [`fplreader`][7]
+`sed` `iconv` `perl` [`fplreader`][7]
 
 [1]: https://translate.google.com/
 [2]: http://www.bing.com/translator/
