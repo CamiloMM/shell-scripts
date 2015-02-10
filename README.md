@@ -19,15 +19,19 @@ Google translate from your shell. Since I've reverse-engineered the [web app][1]
 
 ### Usage:
 
-    google-translate.sh SOURCE TARGET PHRASE
+```bash
+google-translate.sh SOURCE TARGET PHRASE
+```
 
 ### Examples:
 
-    google-translate.sh auto en "Болту́н — нахо́дка для шпио́на."
-    google-translate.sh auto en "La croissance de l'homme ne s'effectue pas de bas en haut, mais de l'intérieur vers l'extérieur."
-    google-translate.sh auto en "γνῶθι σεαυτόν"
-    google-translate.sh auto en "馬鹿は死ななきゃ治らない。"
-    google-translate.sh auto en "彼女の顔は精液に包まれました"
+```bash
+google-translate.sh auto en "Болту́н — нахо́дка для шпио́на."
+google-translate.sh auto en "La croissance de l'homme ne s'effectue pas de bas en haut, mais de l'intérieur vers l'extérieur."
+google-translate.sh auto en "γνῶθι σεαυτόν"
+google-translate.sh auto en "馬鹿は死ななきゃ治らない。"
+google-translate.sh auto en "彼女の顔は精液に包まれました"
+```
 
 ### Dependencies:
 
@@ -43,15 +47,19 @@ This is pretty similar but uses Microsoft Translate (or [Bing Translate][2], wha
 
 ### Usage:
 
-    microsoft-translate.sh SOURCE TARGET PHRASE
+```bash
+microsoft-translate.sh SOURCE TARGET PHRASE
+```
 
 ### Examples:
 
-    microsoft-translate.sh '' en "Бережливость хороша, да скупость страшна"
-    microsoft-translate.sh '' en "猿も木から落ちる。"
-    microsoft-translate.sh '' pt-BR "Spaghetti alla puttanesca means spaghetti of the whore"
-    microsoft-translate.sh '' en "Setze jutges d'un jutjat mengen fetge d'un penjat"
-    microsoft-translate.sh '' en "그녀는 공포에 봤다, 정액 사방에 비행 했다."
+```bash
+microsoft-translate.sh '' en "Бережливость хороша, да скупость страшна"
+microsoft-translate.sh '' en "猿も木から落ちる。"
+microsoft-translate.sh '' pt-BR "Spaghetti alla puttanesca means spaghetti of the whore"
+microsoft-translate.sh '' en "Setze jutges d'un jutjat mengen fetge d'un penjat"
+microsoft-translate.sh '' en "그녀는 공포에 봤다, 정액 사방에 비행 했다."
+```
 
 ### Dependencies:
 
@@ -63,11 +71,15 @@ Another alternative translation service, probably especially good with Russian b
 
 ### Usage:
 
-    yandex-translate.sh SOURCE TARGET PHRASE
+```bash
+yandex-translate.sh SOURCE TARGET PHRASE
+```
 
 ### Example:
 
-    yandex-translate.sh '' en "Когда я говорил, что хочу всё и сразу, то не имел в виду проблемы и неприятности."
+```bash
+yandex-translate.sh '' en "Когда я говорил, что хочу всё и сразу, то не имел в виду проблемы и неприятности."
+```
 
 ### Dependencies:
 
@@ -79,11 +91,15 @@ This is an [automatic-translation-aggregator type of thing][5], which also seems
 
 ### Usage:
 
-    mymemory-translate.sh SOURCE TARGET PHRASE
+```bash
+mymemory-translate.sh SOURCE TARGET PHRASE
+```
 
 ### Example:
 
-    mymemory-translate.sh '' en "A detecção automática de idiomas desse bagulho é bem ruinzinha."
+```bash
+mymemory-translate.sh '' en "A detecção automática de idiomas desse bagulho é bem ruinzinha."
+```
 
 ### Dependencies:
 
@@ -95,12 +111,16 @@ This script compares the different translation engines using their respective sc
 
 ### Usage:
 
-    compare-translations.sh PHRASE
+```bash
+compare-translations.sh PHRASE
+```
 
 ### Example:
 
-	compare-translations.sh "Niemand ist mehr Sklave, als der sich für frei hält, ohne es zu sein."
-	compare-translations.sh "Les opinions ont plus causé de maux sur ce petit globe que la peste et les tremblements de terre."
+```bash
+compare-translations.sh "Niemand ist mehr Sklave, als der sich für frei hält, ohne es zu sein."
+compare-translations.sh "Les opinions ont plus causé de maux sur ce petit globe que la peste et les tremblements de terre."
+```
 
 ### Dependencies:
 
@@ -114,7 +134,9 @@ It uses [an utility called `fplreader` by Jacob Hipps][7], there's a download li
 
 ### Usage:
 
-	fpl2html.sh path/to/playlist.fpl > path/to/playlist.html # Will take a while
+```bash
+fpl2html.sh path/to/playlist.fpl > path/to/playlist.html # Will take a while
+```
 
 ### Dependencies:
 
