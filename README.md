@@ -2,11 +2,14 @@
 
 ---
 
-* [`google-translate.sh`](#google-translatesh)
-* [`microsoft-translate.sh`](#microsoft-translatesh)
-* [`yandex-translate.sh`](#yandex-translatesh)
-* [`mymemory-translate.sh`](#mymemory-translatesh)
-* [`compare-translations.sh`](#compare-translationssh)
+* **Translation-Related**
+  * [`google-translate.sh`](#google-translatesh)
+  * [`microsoft-translate.sh`](#microsoft-translatesh)
+  * [`yandex-translate.sh`](#yandex-translatesh)
+  * [`mymemory-translate.sh`](#mymemory-translatesh)
+  * [`compare-translations.sh`](#compare-translationssh)
+* **File Formats**
+  * [`fpl2html.sh`](#fpl2htmlsh)
 
 ---
 
@@ -14,7 +17,7 @@
 
 Google translate from your shell. Since I've reverse-engineered the [web app][1], this might break at any moment and require fixes. Just file an issue and I'll take a look, but really, I don't even have to tell you not to use shit like this on anything resembling "production environment".
 
-### Syntax:
+### Usage:
 
     google-translate.sh SOURCE TARGET PHRASE
 
@@ -34,7 +37,7 @@ This is pretty similar but uses Microsoft Translate (or [Bing Translate][2], wha
 |------|
 | I've considered adding a [BabelFish][3] script, but it has just a few languages, no automatic detection and the results seem to be coming all from MS translate! It would be MS translate with less features.
 
-### Syntax:
+### Usage:
 
     microsoft-translate.sh SOURCE TARGET PHRASE
 
@@ -50,7 +53,7 @@ This is pretty similar but uses Microsoft Translate (or [Bing Translate][2], wha
 
 Another alternative translation service, probably especially good with Russian but at the same time carrying a comparable set of features to the other ones. Note the script has to query their service twice if you don't specify the language (their [web app][4] also does this). Automatic language detection is also somewhat poor for short phrases.
 
-### Syntax:
+### Usage:
 
     yandex-translate.sh SOURCE TARGET PHRASE
 
@@ -62,7 +65,7 @@ Another alternative translation service, probably especially good with Russian b
 
 This is an [automatic-translation-aggregator type of thing][5], which also seems to feature human contributions. The most surprising aspect is that the API seems to be intentionally out in the clear so it was pretty easy to add it. Automatic language detection is laughable and it may give you weird results for too-short content, so give it a spin but YMMV.
 
-### Syntax:
+### Usage:
 
     mymemory-translate.sh SOURCE TARGET PHRASE
 
@@ -74,16 +77,29 @@ This is an [automatic-translation-aggregator type of thing][5], which also seems
 
 This script compares the different translation engines using their respective scripts.
 
-### Syntax:
+### Usage:
 
     compare-translations.sh PHRASE
 
 ### Example:
 
 	compare-translations.sh "Niemand ist mehr Sklave, als der sich für frei hält, ohne es zu sein."
+	compare-translations.sh "Les opinions ont plus causé de maux sur ce petit globe que la peste et les tremblements de terre."
+
+# `fpl2html.sh`
+
+This script converts a Foobar2000 playlist into an HTML list, that can be easily copy-pasted into places that accept HTML. I made it for my girlfriend to upload her playlist as a tumblr page ([see it as an example][6]). With slight editing you can do other things with playlists; there are many fields which were parsed in the script but not used.
+
+It uses [an utility called `fplreader` by Jacob Hipps][7], there's a download link there but it's 404'd so I compiled it myself, there's a copy here (Windows 7 x64) in case you don't want to compile it. Note that you'll have to compile it if you're on Linux, BSD or whatever but if you're not on Windows you're probably used to compiling stuff anyway, lol.
+
+### Usage:
+
+	fpl2html.sh path/to/playlist.fpl > path/to/playlist.html # Will take a while
 
 [1]: https://translate.google.com/
 [2]: http://www.bing.com/translator/
 [3]: http://www.babelfish.com/
 [4]: https://translate.yandex.com/
 [5]: http://mymemory.translated.net/
+[6]: http://hya-chan.tumblr.com/playlist
+[7]: https://github.com/tetrisfrog/fplreader
