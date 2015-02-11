@@ -11,8 +11,8 @@ hyperBoring='</ns3:to></ns3:Translate></SOAP-ENV:Body></SOAP-ENV:Envelope>'
 source="$1"
 destination="$2"
 shift 2
-xmlencode() { sed -r 's/\\/\\\\/g;s/&/\&amp;/g;s/"/\&quot;/g;s/'\''/\&apos;/g;s/</\&lt;/g;s/>/\&gt;/g' | iconv -f UTF-8 -t JAVA | sed -r 's/\\u([0-9a-f]{4})/\&#x\1;/g;s/\\&#x([0-9a-f]{4});/\\u\1/g'; }
-text="$(xmlencode <<< "$@")"
+xmlentities() { sed -r 's/\\/\\\\/g;s/&/\&amp;/g;s/"/\&quot;/g;s/'\''/\&apos;/g;s/</\&lt;/g;s/>/\&gt;/g' | iconv -f UTF-8 -t JAVA | sed -r 's/\\u([0-9a-f]{4})/\&#x\1;/g;s/\\&#x([0-9a-f]{4});/\\u\1/g'; }
+text="$(xmlentities <<< "$@")"
 request="$superBoring$text$megaBoring$source$ultraBoring$destination$hyperBoring"
 pattern='s#.*<TranslateResult>##g;s#</TranslateResult>.*##g'
 response="$(wget -qO- --header="$h1" --header="$h2" --user-agent="gSOAP/2.8" --post-data="$request" http://api.microsofttranslator.com/V2/soap.svc)"
