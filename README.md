@@ -10,6 +10,8 @@
   * [`compare-translations.sh`](#compare-translationssh)
 * **File Formats**
   * [`fpl2html.sh`](#fpl2htmlsh)
+* **Protocols**
+  * [`xmlentities.sh`](#xmlentitiessh)
 
 ---
 
@@ -142,6 +144,20 @@ fpl2html.sh path/to/playlist.fpl > path/to/playlist.html # Will take a while
 
 `sed` `iconv` `perl` [`fplreader`][7]
 
+# `xmlentities.sh`
+
+This takes raw UTF-8 from `STDIN` and adds XML entities (valid in HTML, too), such as `&amp;` and [`&#x2603;`][8].
+
+### Usage:
+
+```bash
+echo 'déjà-vu' | xmlentities.sh # 'd&#x00e9;j&#x00e0;-vu'
+```
+
+### Dependencies:
+
+`sed` `iconv`
+
 [1]: https://translate.google.com/
 [2]: http://www.bing.com/translator/
 [3]: http://www.babelfish.com/
@@ -149,3 +165,4 @@ fpl2html.sh path/to/playlist.fpl > path/to/playlist.html # Will take a while
 [5]: http://mymemory.translated.net/
 [6]: http://hya-chan.tumblr.com/playlist
 [7]: https://github.com/tetrisfrog/fplreader
+[8]: http://unicodesnowmanforyou.com/
