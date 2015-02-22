@@ -8,10 +8,11 @@
   * [`yandex-translate.sh`](#yandex-translatesh)
   * [`mymemory-translate.sh`](#mymemory-translatesh)
   * [`compare-translations.sh`](#compare-translationssh)
-* **File Formats**
-  * [`fpl2html.sh`](#fpl2htmlsh)
 * **Protocols**
   * [`xmlentities.sh`](#xmlentitiessh)
+* **Utilities**
+  * [`fpl2html.sh`](#fpl2htmlsh)
+  * [`check-crc.sh`](#check-crcsh)
 
 ---
 
@@ -157,6 +158,25 @@ echo 'déjà-vu' | xmlentities.sh # 'd&#x00e9;j&#x00e0;-vu'
 ### Dependencies:
 
 `sed` `iconv`
+
+# `check-crc.sh`
+
+If you happen to download anime, you'll notice lots of files with CRCs on the filename. This tool is designed to find CRCs in files, and check if they match. Point it to a directory, and it will scan all filenames (recursively), check the ones that seem to have a valid CRC32 (SFV-compatible) in them, checksum them, see if they match, keep doing this while you have a fun time elsewhere, and give you a report at the end (either all OK or showing files that didn't match). Non-zero exit code means something went wrong, and all output is to stderr, so you can also run it as part of something else in a script.
+
+### Usage:
+
+```bash
+check-crc.sh '[Fansubs]_-_Love.Wierd.Filenames 12v2_(1080i,HE-AAC+VP9){404B00B5}.ogm'
+check-crc.sh 'folder-full-of-shitty-names-to-be-renamed-after-checking-crc'
+```
+
+### Dependencies:
+
+`find` `wc` `tr` `sed` `awk` `grep` `cat` `cut` `basename` `bash` `python`
+
+| Note |
+|------|
+| Python (2.7) was used because it can calculate CRC32s out of the box in Windows and Linux. I'll drop this dependency if you suggest me an alternative that is either self-contained or only depends on a core language (on Node and Perl you need to install stuff and PHP's crc32 seems to load the whole "string" in memory like a retarded motherfucker). The `cksum` util doesn't count because it uses Ethernet's checksum algorithm.
 
 [1]: https://translate.google.com/
 [2]: http://www.bing.com/translator/
