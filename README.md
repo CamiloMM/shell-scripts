@@ -13,6 +13,7 @@
 * **Utilities**
   * [`fpl2html.sh`](#fpl2htmlsh)
   * [`check-crc.sh`](#check-crcsh)
+  * [`download-google-fonts.sh`](#download-google-fontssh)
 
 ---
 
@@ -172,11 +173,29 @@ check-crc.sh 'folder-full-of-shitty-names-to-be-renamed-after-checking-crc'
 
 ### Dependencies:
 
-`find` `wc` `tr` `sed` `awk` `grep` `cat` `cut` `basename` `bash` `python`
+`find` `wc` `tr` `sed` `awk` `grep` `cat` `cut` `basename` `python`
 
 | Note |
 |------|
 | Python (2.7) was used because it can calculate CRC32s out of the box in Windows and Linux. I'll drop this dependency if you suggest me an alternative that is either self-contained or only depends on a core language (on Node and Perl you need to install stuff and PHP's crc32 seems to load the whole "string" in memory like a retarded motherfucker). The `cksum` util doesn't count because it uses Ethernet's checksum algorithm.
+
+# `download-google-fonts.sh`
+
+Downloads Google fonts so they can be used locally ([like with NW.js][9]) or in your own server (be careful with cross-browser format support in such a case).
+
+The first parameter is an URL Google gives you to embed the font, like `http://fonts.googleapis.com/css?family=Asap:400,700italic`, and the second parameter can be an user agent string (to get fonts for a specific platform), a format name (`woff`/`woff2`/`ttf`), or nothing, in which case the default is `ttf`.
+
+The standard output of the script will be re-written CSS that you can use to require the fonts themselves.
+
+### Usage:
+
+```bash
+download-google-fonts.sh 'http://fonts.googleapis.com/css?family=Asap:400,700italic' woff2 > style.css
+```
+
+### Dependencies:
+
+`grep` `sed` `wget` `tr` `cut`
 
 [1]: https://translate.google.com/
 [2]: http://www.bing.com/translator/
@@ -186,3 +205,4 @@ check-crc.sh 'folder-full-of-shitty-names-to-be-renamed-after-checking-crc'
 [6]: http://hya-chan.tumblr.com/playlist
 [7]: https://github.com/tetrisfrog/fplreader
 [8]: http://unicodesnowmanforyou.com/
+[9]: https://github.com/nwjs/nw.js
