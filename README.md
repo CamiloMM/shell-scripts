@@ -185,12 +185,12 @@ Downloads Google fonts so they can be used locally ([like with NW.js][9]) or in 
 
 The first parameter is an URL Google gives you to embed the font, like `http://fonts.googleapis.com/css?family=Asap:400,700italic`, and the second parameter can be an user agent string (to get fonts for a specific platform), a format name (`woff`/`woff2`/`ttf`), or nothing, in which case the default is `ttf`.
 
-The standard output of the script will be re-written CSS that you can use to require the fonts themselves.
+The standard output of the script will be re-written CSS that you can use to require the fonts themselves. It also supports saving fonts (and adjusting file references in the CSS) to a custom directory (third parameter).
 
 ### Usage:
 
 ```bash
-download-google-fonts.sh 'http://fonts.googleapis.com/css?family=Asap:400,700italic' woff2 > style.css
+download-google-fonts.sh "$url" "$formatOrUserAgent" "$subdirName" > "$name.css"
 ```
 
 ### Dependencies:
