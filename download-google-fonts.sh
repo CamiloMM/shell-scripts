@@ -30,7 +30,12 @@ case "$2" in
         css="$(wget -qO- "$url" -U "$2")" ;;
 esac
 
-echo ""
+# The directory variable will be either an empty string or will
+# contain the trailing slash.
+if [[ -n "$3" ]]; then
+    dir="$(tr -s / <<< "$3/")"
+    mkdir -p "$dir"
+fi
 
 # Normalizes a string so it can form a decent filename. Example:
 # norm " Hello, it is a Good Day. " >>> "hello-it-is-a-good-day"
@@ -79,7 +84,7 @@ parseLine() {
         nameRaw="$(cut -d $'\x1F' -f 2 <<< "$fields")"
         url="$(cut -d $'\x1F' -f 3 <<< "$fields")"
         wrapAfter="$(cut -d $'\x1F' -f 4 <<< "$fields")"
-        filename="$(norm "$nameRaw")$separator$(norm "$charset").$(ext "$url")"
+        filename="$dir$(norm "$nameRaw")$separator$(norm "$charset").$(ext "$url")"
         wget -q "$url" -O "$filename"
         echo "$wrapBefore local('$nameRaw'), url('$filename') $wrapAfter"
     else
