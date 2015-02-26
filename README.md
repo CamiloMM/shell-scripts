@@ -7,6 +7,7 @@
   * [`microsoft-translate.sh`](#microsoft-translatesh)
   * [`yandex-translate.sh`](#yandex-translatesh)
   * [`mymemory-translate.sh`](#mymemory-translatesh)
+  * [`honyaku-translate.sh`](#honyaku-translatesh)
   * [`compare-translations.sh`](#compare-translationssh)
 * **Protocols**
   * [`xmlentities.sh`](#xmlentitiessh)
@@ -109,6 +110,26 @@ mymemory-translate.sh '' en "A detecção automática de idiomas desse bagulho �
 
 `perl` `wget` `grep` `sed` `curl` `node`
 
+# `honyaku-translate.sh`
+
+This is a script that automates the [Yahoo Honyaku][10] engine. It's probably best for Japanese to English, which is good, because it's the weak spot of other translation engines (not saying I expect this to do well either). The supported languages are `en`, `ja`, `pt`, `es`, `ko`, `fr`, `zh`, `it`, `de`, and empty string means automatic detection (which sucks saggy meat curtains, like MyMemory's).
+
+### Usage:
+
+```bash
+honyaku-translate.sh SOURCE TARGET PHRASE
+```
+
+### Example:
+
+```bash
+honyaku-translate.sh '' en '俺の妹がこんなに可愛いわけがない'
+```
+
+### Dependencies:
+
+`perl` `curl` `grep` `sed` `node`
+
 # `compare-translations.sh`
 
 This script compares the different translation engines using their respective scripts.
@@ -197,12 +218,13 @@ download-google-fonts.sh "$url" "$formatOrUserAgent" "$subdirName" > "$name.css"
 
 `grep` `sed` `wget` `tr` `cut`
 
-[1]: https://translate.google.com/
-[2]: http://www.bing.com/translator/
-[3]: http://www.babelfish.com/
-[4]: https://translate.yandex.com/
-[5]: http://mymemory.translated.net/
-[6]: http://hya-chan.tumblr.com/playlist
-[7]: https://github.com/tetrisfrog/fplreader
-[8]: http://unicodesnowmanforyou.com/
-[9]: https://github.com/nwjs/nw.js
+[1]:  https://translate.google.com/
+[2]:  http://www.bing.com/translator/
+[3]:  http://www.babelfish.com/
+[4]:  https://translate.yandex.com/
+[5]:  http://mymemory.translated.net/
+[6]:  http://hya-chan.tumblr.com/playlist
+[7]:  https://github.com/tetrisfrog/fplreader
+[8]:  http://unicodesnowmanforyou.com/
+[9]:  https://github.com/nwjs/nw.js
+[10]: http://honyaku.yahoo.co.jp/
