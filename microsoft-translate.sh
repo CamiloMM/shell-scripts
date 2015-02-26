@@ -17,7 +17,7 @@ request="$superBoring$text$megaBoring$source$ultraBoring$destination$hyperBoring
 pattern='s#.*<TranslateResult>##g;s#</TranslateResult>.*##g'
 response="$(wget -qO- --header="$h1" --header="$h2" --user-agent="gSOAP/2.8" --post-data="$request" http://api.microsofttranslator.com/V2/soap.svc)"
 if (($?)); then
-	exit 1 # Error with wgetting.
+    exit 1 # Error with wgetting.
 else
-	printf %s "$response" | sed -r "$pattern"
+    printf %s "$response" | sed -r "$pattern"
 fi

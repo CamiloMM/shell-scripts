@@ -8,7 +8,7 @@ encodeURIComponent() { perl -pe 's/([^a-zA-Z0-9_.!~*()'\''-])/sprintf("%%%02X", 
 content="$(printf %s "$@" | encodeURIComponent)"
 # We must *detect* the language first, like in the Yandex script.
 if [[ -z "$source" ]]; then # And only if the user didn't supply the source, of course.
-	source="$(wget -qO- "http://mymemory.translated.net/en/Autodetect/English/$content" | grep '</title>' | sed -r 's# -[^<-]+</title>.*$##;s/^.* - ([^-]+)$/\1/')"
+    source="$(wget -qO- "http://mymemory.translated.net/en/Autodetect/English/$content" | grep '</title>' | sed -r 's# -[^<-]+</title>.*$##;s/^.* - ([^-]+)$/\1/')"
 fi
 pair="$source|$dest"
 json="$(curl -s "http://mymemory.translated.net/api/get?q=$content&langpair=$pair")"
