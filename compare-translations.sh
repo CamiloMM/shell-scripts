@@ -16,3 +16,6 @@ echo
 echo -n ' MyMemory Translate: '
 mymemory-translate.sh '' en "$@"
 echo
+echo -n '      Yahoo Honyaku: '
+honyaku-translate.sh '' en "$@"
+echo
