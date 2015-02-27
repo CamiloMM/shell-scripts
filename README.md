@@ -2,19 +2,67 @@
 
 ---
 
-* **Translation-Related**
-  * [`google-translate.sh`](#google-translatesh)
-  * [`microsoft-translate.sh`](#microsoft-translatesh)
-  * [`yandex-translate.sh`](#yandex-translatesh)
-  * [`mymemory-translate.sh`](#mymemory-translatesh)
-  * [`honyaku-translate.sh`](#honyaku-translatesh)
-  * [`compare-translations.sh`](#compare-translationssh)
-* **Protocols**
-  * [`xmlentities.sh`](#xmlentitiessh)
-* **Utilities**
-  * [`fpl2html.sh`](#fpl2htmlsh)
-  * [`check-crc.sh`](#check-crcsh)
-  * [`download-google-fonts.sh`](#download-google-fontssh)
+<!--
+  You may rightfully ask: What the fuck, Mr. Anderson.
+  Well. You know that zebra-striping? I don't want it.
+  Also, I want rowspan. Thus was born the HTML table.
+  To recap: "<tr></tr>"s are just for index adjustment.
+-->
+<table>
+  <tr></tr>
+  <tr>
+    <td colspan="2" align="center"><b>Translation-Related</b></td>
+  </tr>
+  <tr>
+    <td><a href="#google-translatesh"><code>google-translate.sh</code></a></td>
+    <td>Automates <a href="https://translate.google.com/">Google Translate</a>.</td>
+  </tr>
+  <tr></tr>
+  <tr>
+    <td><a href="#microsoft-translatesh"><code>microsoft-translate.sh</code></a></td>
+    <td>Automates <a href="http://www.bing.com/translator/">Bing Translator</a>.</td>
+  </tr>
+  <tr></tr>
+  <tr>
+    <td><a href="#yandex-translatesh"><code>yandex-translate.sh</code></a></td>
+    <td>Automates <a href="https://translate.yandex.com/">Yandex.Translate</a>.</td>
+  </tr>
+  <tr></tr>
+  <tr>
+    <td><a href="#mymemory-translatesh"><code>mymemory-translate.sh</code></a></td>
+    <td>Automates <a href="https://mymemory.translated.net/">MyMemory Translated</a>.</td>
+  </tr>
+  <tr></tr>
+  <tr>
+    <td><a href="#honyaku-translatesh"><code>honyaku-translate.sh</code></a></td>
+    <td>Automates <a href="http://honyaku.yahoo.co.jp/">Yahoo Honyaku</a>.</td>
+  </tr>
+  <tr></tr>
+  <tr>
+    <td><a href="#compare-translationssh"><code>compare-translations.sh</code></a></td>
+    <td>Compares the various translation scripts.</td>
+  </tr>
+  <tr><td colspan="2" align="center"><b>Protocols</b></td></tr>
+  <tr>
+    <td><a href="#xmlentitiessh"><code>xmlentities.sh</code></a></td>
+    <td>Encodes special characters for XML and HTML.</td>
+  </tr>
+  <tr><td colspan="2" align="center"><b>Utilities</b></td></tr>
+  <tr>
+    <td><a href="#fpl2htmlsh"><code>fpl2html.sh</code></a></td>
+    <td>Converts a <a href="http://www.foobar2000.org/">Foobar2000</a> playlist into HTML (<a href="http://hya-chan.tumblr.com/playlist">example</a>).</td>
+  </tr>
+  <tr></tr>
+  <tr>
+    <td><a href="#check-crcsh"><code>check-crc.sh</code></a></td>
+    <td>Verifies <code>CRC32</code>s embedded in filenames.</td>
+  </tr>
+  <tr></tr>
+  <tr>
+    <td><a href="#download-google-fontssh"><code>download-google-fonts.sh</code></a></td>
+    <td>Downloads fonts from <a href="https://www.google.com/fonts/">Google Fonts</a> and outputs matching CSS.</td>
+  </tr>
+</table>
 
 ---
 
