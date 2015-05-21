@@ -19,7 +19,7 @@ encodeURIComponent() {
 }
 
 tags="$(encodeURIComponent <<< "$1")"
-dirName="$(head -n1 <<< "$1" | sed -r 's#[\/:*?"<>|]##g')"
+dirName="$(head -n1 <<< "$1" | sed -r 's#[\/:*?"<>|]#�#g')"
 chan='https://chan.sankakucomplex.com'
 
 getResultPage() {
