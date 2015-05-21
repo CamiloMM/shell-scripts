@@ -57,10 +57,15 @@
     <td><a href="#check-crcsh"><code>check-crc.sh</code></a></td>
     <td>Verifies <code>CRC32</code>s embedded in filenames.</td>
   </tr>
-  <tr></tr>
+  <tr><td colspan="2" align="center"><b>Downloaders</b></td></tr>
   <tr>
     <td><a href="#download-google-fontssh"><code>download-google-fonts.sh</code></a></td>
     <td>Downloads fonts from <a href="https://www.google.com/fonts/">Google Fonts</a> and outputs matching CSS.</td>
+  </tr>
+  <tr></tr>
+  <tr>
+    <td><a href="#sankaku-downloadersh"><code>sankaku-downloader.sh</code></a></td>
+    <td>Downloads media from <a href="https://chan.sankakucomplex.com">Sankaku Channel</a> in bulk, from tags.</td>
   </tr>
 </table>
 
@@ -246,7 +251,7 @@ check-crc.sh 'folder-full-of-shitty-names-to-be-renamed-after-checking-crc'
 
 | Note |
 |------|
-| Python (2.7) was used because it can calculate CRC32s out of the box in Windows and Linux. I'll drop this dependency if you suggest me an alternative that is either self-contained or only depends on a core language (on Node and Perl you need to install stuff and PHP's crc32 seems to load the whole "string" in memory like a retarded motherfucker). The `cksum` util doesn't count because it uses Ethernet's checksum algorithm.
+| Python (2.7) was used because it can calculate CRC32s out of the box in Windows and Linux. I'll drop this dependency if you suggest me an alternative that is either self-contained or only depends on a core language (on Node and Perl you need to install stuff and PHP's crc32 seems to load the whole "string" in memory like a retarded motherfucker). The `cksum` util doesn't count because it uses Ethernet's checksum algorithm. |
 
 # `download-google-fonts.sh`
 
@@ -266,6 +271,24 @@ download-google-fonts.sh "$url" "$formatOrUserAgent" "$subdirName" > "$name.css"
 
 `grep` `sed` `wget` `tr` `cut`
 
+# `sankaku-downloader.sh`
+
+Downloads content from [Sankaku Channel][11], including `jpeg`/`png` images, animated `gifs`, `webm` videos, and `swf` flash games, from tags that you can pass to it, just as you would use on the website itself. Content is downloaded to a folder named after the tags you specified.
+
+### Usage:
+
+```bash
+sankaku-downloader.sh 'hjl brown_hair -rating:e'
+```
+
+### Dependencies:
+
+`tr` `awk` `grep` `perl` `sed` `curl`
+
+| Note |
+|------|
+| Directory-unsafe characters are replaced by `�` (so you notice them very easily and do something about it, like renaming the folder to something sensible). |
+
 [1]:  https://translate.google.com/
 [2]:  http://www.bing.com/translator/
 [3]:  http://www.babelfish.com/
@@ -276,3 +299,4 @@ download-google-fonts.sh "$url" "$formatOrUserAgent" "$subdirName" > "$name.css"
 [8]:  http://unicodesnowmanforyou.com/
 [9]:  https://github.com/nwjs/nw.js
 [10]: http://honyaku.yahoo.co.jp/
+[11]: https://chan.sankakucomplex.com/
