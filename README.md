@@ -57,6 +57,11 @@
     <td><a href="#check-crcsh"><code>check-crc.sh</code></a></td>
     <td>Verifies <code>CRC32</code>s embedded in filenames.</td>
   </tr>
+  <tr></tr>
+  <tr>
+    <td><a href="#thumbsh"><code>thumb.sh</code></a></td>
+    <td>Generates a single thumbnail from a video.</td>
+  </tr>
   <tr><td colspan="2" align="center"><b>Downloaders</b></td></tr>
   <tr>
     <td><a href="#download-google-fontssh"><code>download-google-fonts.sh</code></a></td>
@@ -252,6 +257,22 @@ check-crc.sh 'folder-full-of-shitty-names-to-be-renamed-after-checking-crc'
 | Note |
 |------|
 | Python (2.7) was used because it can calculate CRC32s out of the box in Windows and Linux. I'll drop this dependency if you suggest me an alternative that is either self-contained or only depends on a core language (on Node and Perl you need to install stuff and PHP's crc32 seems to load the whole "string" in memory like a retarded motherfucker). The `cksum` util doesn't count because it uses Ethernet's checksum algorithm. |
+
+# `thumb.sh`
+
+Generates a thumbnail from a video (not a page of thumnails, just a single thumbnail).
+
+The frame selected is at 25% of the video. This is usually representative of the video, but you may want to edit the source if you think the frame at one third, or half, would be better.
+
+### Usage:
+
+```bash
+thumb.sh <video-name.ext> [thumb-name.ext]
+```
+
+### Dependencies:
+
+`ffmpeg` `grep` `sed` `cut`
 
 # `download-google-fonts.sh`
 
