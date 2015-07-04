@@ -42,10 +42,15 @@
     <td><a href="#compare-translationssh"><code>compare-translations.sh</code></a></td>
     <td>Compares the various translation scripts.</td>
   </tr>
-  <tr><td colspan="2" align="center"><b>Protocols</b></td></tr>
+  <tr><td colspan="2" align="center"><b>Protocols & Formats</b></td></tr>
   <tr>
     <td><a href="#xmlentitiessh"><code>xmlentities.sh</code></a></td>
     <td>Encodes special characters for XML and HTML.</td>
+  </tr>
+  <tr></tr>
+  <tr>
+	<td><a href="#encode-uri-componentsh"><code>encode-uri-component.sh</code></a></td>
+	<td>Encodes strings as HTTP URI components (e.g., query params).</td>
   </tr>
   <tr><td colspan="2" align="center"><b>Utilities</b></td></tr>
   <tr>
@@ -238,6 +243,21 @@ echo 'déjà-vu' | xmlentities.sh # 'd&#x00e9;j&#x00e0;-vu'
 ### Dependencies:
 
 `sed` `iconv`
+
+# `encode-uri-component.sh`
+
+This takes raw UTF-8 from `STDIN` or shell argument(s) and encodes characters for URIs, similar to the `encodeURIComponent` javascript method.
+
+### Usage:
+
+```bash
+echo 'déjà-vu' | encode-uri-component.sh # 'd%C3%A9j%C3%A0-vu'
+encode-uri-component.sh 'déjà-vu' # 'd%C3%A9j%C3%A0-vu'
+```
+
+### Dependencies:
+
+`perl`
 
 # `check-crc.sh`
 
