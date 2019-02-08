@@ -24,7 +24,7 @@ chan="https://chan.sankakucomplex.com"
 useragent="user-agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Ubuntu Chromium/71.0.3578.98 Chrome/71.0.3578.98 Safari/537.36"
 # Modify this to get from 26+ page (without login you can see only firsts 25)
 # Set your username and your password hashed (see in networks tab and get them from cookies)
-cookie='Cookie: locale=en; auto_page=1; login=Username; pass_hash=ed4f078hashedpassword;'
+cookie="Cookie: locale=en; auto_page=1; login=Username; pass_hash=ed4f078hashedpassword;"
 
 getResultPage() {
     curl -s "$chan/post/index.content?tags=$tags&page=$1" -H "$useragent" -H "$cookie"
